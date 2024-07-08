@@ -11,7 +11,7 @@ import {
 import { BooksService } from './books.service';
 import { Book } from './book.schema';
 import { CreateBookRequest, UpdateBookRequest } from './books.type';
-import { isValidDate } from 'src/utils/date';
+import { isValidDate } from '../utils/date';
 
 @Controller('books')
 export class BooksController {
