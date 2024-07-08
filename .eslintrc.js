@@ -1,0 +1,45 @@
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:prettier/recommended',
+  ],
+  root: true,
+  env: {
+    node: true,
+    jest: true,
+  },
+  ignorePatterns: ['.eslintrc.js'],
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        semi: true,
+        trailingComma: 'all',
+        printWidth: 80,
+        tabWidth: 2,
+        endOfLine: 'auto',
+      },
+    ],
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-non-null-assertion': 'warn',
+    'no-console': 'warn',
+    'no-debugger': 'warn',
+    'prefer-const': 'error',
+    'no-var': 'error',
+    'eqeqeq': ['error', 'always'],
+  },
+};
